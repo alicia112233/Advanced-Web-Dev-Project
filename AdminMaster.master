@@ -1,0 +1,161 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="AdminMaster.master.cs" Inherits="MasterPage" %>
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server"></asp:ContentPlaceHolder>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="assets/css/StyleSheet.css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/MasterPage.css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+          <asp:ToolkitScriptManager ID="toolkitScriptManager1" runat="server"></asp:ToolkitScriptManager>
+            <div class="maincontainer">
+                <div class="topnav">
+                    <div class="topnavdd">
+                        <a href="#">
+                            <asp:Label ID="lblAftLogin" runat="server" Text="ADMIN" Font-Bold="True"></asp:Label></a>
+                        <div class="topnavdd-content">
+                            <a href="indexBags.aspx" style="font-family: 'Oswald', sans-serif; color: #EC7063">Sign Out</a>
+                        </div>
+                    </div>
+                    <a href="Admin-Users.aspx">Manage Users</a>
+                    <a href="Admin-Orders.aspx">Manage Orders</a>
+                    <a href="Chart.aspx">View Chart</a>
+                </div>
+
+                <div class="midnav">
+                    <a style="color: #DD33FF; float: left; margin-left: 10px; font-size: 32px; font-family: 'Anton', sans-serif;"
+                        href="Admin-index.aspx">Shopbagz
+                    </a>
+                </div>
+
+                <div class="btmnav">
+                    <div class="dropdownbooks">
+                        <button>Bags</button>
+                        <div class="dropdownbooks-content">
+                            <a style="font-family: 'Oswald', sans-serif;">CATEGORIES</a>
+                            <a style="font-family: 'Oswald', sans-serif;">FEATURED</a>
+                            <a style="font-family: 'Oswald', sans-serif;">TRENDS & OCCASIONS</a>
+                            <p style="font-size: 10px;" href="#"></p>
+
+                            <%--This link below will be the page we will code with all the products.--%>
+                            <a style="font-size: 10px;" href="admin-view-all-products.aspx">View All Bags</a>
+                            <a style="font-size: 10px;" href="Admin-BestSeller.aspx">The Bestsellers</a>
+                            <a style="font-size: 10px;" href="#">Essentials</a>
+                            <p style="font-size: 10px;" href="#"></p>
+
+                            <a style="font-size: 10px;" href="#">New Arrivals</a>
+                            <a style="font-size: 10px;" href="#">Trending Now</a>
+                            <a style="font-size: 10px;" href="#">Party</a>
+                            <p style="font-size: 10px;" href="#"></p>
+
+                            <a style="font-size: 10px;" href="#">Backpacks</a>
+                            <a style="font-size: 10px;" href="#">Online Exclusive</a>
+                            <a style="font-size: 10px;" href="#">Wedding</a>
+                            <p style="font-size: 10px;" href="#"></p>
+
+                            <a style="font-size: 10px;" href="#">Crossbody Bags</a>
+                            <a style="font-size: 10px;" href="#">Back In Stock</a>
+                            <a style="font-size: 10px;" href="#">Work</a>
+                            <p style="font-size: 10px;" href="#"></p>
+
+                            <a style="font-size: 10px;" href="#">Handbags</a>
+                            <a style="font-size: 10px;" href="#">Summer 2023 Bags</a>
+                            <p style="font-size: 10px;" href="#"></p>
+                            <p style="font-size: 10px;" href="#"></p>
+
+                            <a style="font-size: 10px;" href="#">Shoulder Bags</a>
+                            <a style="font-size: 10px;" href="#">The Bucks Collection</a>
+                            <p style="font-size: 10px;" href="#"></p>
+                            <p style="font-size: 10px;" href="#"></p>
+
+                            <a style="font-size: 10px;" href="#">Tote Bags</a>
+                            <p style="font-size: 10px;" href="#"></p>
+                            <p style="font-size: 10px;" href="#"></p>
+                            <p style="font-size: 10px;" href="#"></p>
+
+                            <p style="font-size: 10px;" href="#"></p>
+                            <p style="font-size: 10px;" href="#"></p>
+                            <p style="font-size: 10px;" href="#"></p>
+                            <p style="font-size: 10px;" href="#"></p>
+
+                            <p style="font-size: 10px;" href="#"></p>
+                            <p style="font-size: 10px;" href="#"></p>
+                            <p style="font-size: 10px;" href="#"></p>
+                            <p style="font-size: 10px;" href="#"></p>
+                        </div>
+                    </div>
+                    <a href="#">Wallets</a>
+                    <a href="#">Fragrances</a>
+                    <a href="#">Jewellery</a>
+                    <a href="#">Kids</a>
+                    <a style="color: red" href="#">Sale</a>
+                </div>
+
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+
+            <div class="maincontainer">
+                <div class="footer">
+                    <div class="leftfooter">
+                        <div class="bookmarks">
+                            <p>SB Services</p>
+                            <p>Shipping</p>
+                            <p>About Us</p>
+                            <p>Quick Help</p>
+                        </div>
+                        <div class="directions">
+                            <ul>
+                                <li><a href="#">Advertise</a></li>
+                                <li><a href="#">Affiliate Program</a></li>
+                                <li><a href="#">Publisher & Author Guidelines</a></li>
+                                <li><a href="#">Bulk Order Discounts</a></li>
+                                <li><a href="#">Membership</a></li>
+                            </ul>
+                            <ul>
+                                <li><a href="#">Shipping FAQs</a></li>
+                            </ul>
+                            <ul>
+                                <li><a href="#">About ShopBagz</a></li>
+                                <li><a href="#">Investor Relations</a></li>
+                                <li><a href="#">ShopBagz 2.0 Inc.</a></li>
+                                <li><a href="#">Careers at ShopBagz</a></li>
+                            </ul>
+                            <ul>
+                                <li><a href="#">Customer Service</a></li>
+                                <li><a href="#">Order Status</a></li>
+                                <li><a href="#">Easy Returns</a></li>
+                                <li><a href="#">Product Recalls</a></li>
+                                <li><a href="#">Correction & Updates</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="rightfooter">
+                        <asp:Button ID="btnFindLocation" Style="width: 100%; height: 40px; border: 0.5px solid; background-color: transparent; font-size: 16px; font-family: 'Poppins', sans-serif;" runat="server" Text="Locate Nearest Store" />
+                        <br />
+                        <br />
+                        <asp:Button ID="btnNewsUpdate" Style="width: 100%; height: 40px; border: 0.5px solid; background-color: transparent; font-size: 12px; font-family: 'Poppins', sans-serif;" runat="server" Text="Sign up for news updates" />
+
+                        <div class="socialmedias">
+                            <asp:ImageButton ID="ImageButton1" Height="30px" Width="30px" ImageUrl="images/fb.png" runat="server" />
+                            <asp:ImageButton ID="ImageButton2" Height="30px" Width="30px" ImageUrl="images/twitter.png" runat="server" />
+                            <asp:ImageButton ID="ImageButton3" Height="30px" Width="30px" ImageUrl="images/ig.png" runat="server" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        </div>
+    </form>
+</body>
+</html>

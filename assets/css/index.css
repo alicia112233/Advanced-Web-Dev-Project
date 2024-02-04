@@ -1,0 +1,346 @@
+﻿.collage {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 100%;
+    height: 420px;
+    margin-top: 20px;
+}
+
+.iconcontainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    padding: 40px;
+    border-bottom: 0.5px solid black;
+}
+
+    .iconcontainer a {
+        color: #BF94E4;
+        text-align: center;
+    }
+
+.zone1 {
+    background-image: url('/Images/1.jpg');
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+    .zone1:hover {
+        opacity: 0.5;
+    }
+
+.zone2 {
+    background-image: url('/Images/2.jpg');
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+    .zone2:hover {
+        opacity: 0.5;
+    }
+
+.zone3 {
+    background-image: url(/Images/3.jpg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+    .zone3:hover {
+        opacity: 0.5;
+    }
+
+.bookcontainer {
+    display: grid;
+    grid-gap: 15px;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    width: 100%;
+    height: 285px;
+}
+
+.zoneA {
+    text-align: center;
+    font-size: 37px;
+    font-weight: bold;
+    font-family: 'Monoton', cursive;
+}
+
+.zoneB {
+    background-image: url(/Images/4.jpg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+.zoneC {
+    background-image: url(/Images/5.jpg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+.zoneD {
+    background-image: url(/Images/6.jpg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+.zoneE {
+    background-image: url(/Images/7.jpg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+.titletext {
+    text-align: center;
+    font-size: 28px;
+    font-family: 'Aldrich', sans-serif;
+    color: #BF94E4;
+    border-bottom: 0.5px solid black;
+}
+
+.movieposter {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 100%;
+    height: 465px;
+}
+
+.toyposter {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 100%;
+    height: 315px;
+}
+
+.poster1 {
+    background-image: url(/Images/11.jpg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+.poster2 {
+    background-image: url(/Images/9.jpg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+.poster3 {
+    background-image: url(/Images/10.jpg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+.toy1 {
+    background-image: url(/Images/8.jpg);
+    background-size: 80%;
+    background-repeat: no-repeat;
+}
+
+.toy2 {
+    background-image: url(/Images/12.jpg);
+    background-size: 80%;
+    background-repeat: no-repeat;
+}
+
+.toy3 {
+    background-image: url(/Images/13.jpg);
+    background-size: 80%;
+    background-repeat: no-repeat;
+}
+
+.bookcontainer2 {
+    display: grid;
+    grid-gap: 15px;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    width: 100%;
+    height: 600px;
+}
+
+.zoneF {
+    background-image: url(/Images/14.jpg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+.zoneG {
+    background-image: url(/Images/15.jpg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+.zoneH {
+    background-image: url(/Images/16.jpg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+.zoneI {
+    background-image: url(/Images/17.jpg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+.zoneJ {
+    background-image: url(/Images/18.jpg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+.zoneK {
+    background-image: url(/Images/19.jpg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+.zoneL {
+    background-image: url(/Images/20.jpg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+.zoneM {
+    background-image: url(/Images/21.jpg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+.zoneN {
+    background-image: url(/Images/22.jpg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+.zoneO {
+    background-image: url(/Images/23.jpg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+.bcbtn {
+    font-family: 'Poppins', sans-serif;
+    height: 45px;
+    width: 130px;
+    color: white;
+    background-color: #BF94E4;
+    border: none;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 12px;
+}
+
+.slideshow-container {
+    width: 100%;
+    position: relative;
+    margin: auto;
+}
+
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+    .prev:hover, .next:hover {
+        background-color: rgba(0,0,0,0.8);
+    }
+
+.numbertext {
+    color: black;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+}
+
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+    from {
+        opacity: .4
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+@keyframes fade {
+    from {
+        opacity: .4
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+@media only screen and (max-width: 300px) {
+    .prev, .next, .text {
+        font-size: 11px
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .iconcontainer, .titletext {
+        font-size: 12px;
+        width: auto;
+        height: auto;
+    }
+
+        .iconcontainer i {
+            font-size: 2rem;
+        }
+
+    .collage {
+        width: auto;
+        height: 160px;
+    }
+
+    .bookcontainer {
+        width: auto;
+        height: 100px;
+    }
+
+    .bcbtn {
+        height: 20px;
+        width: 70px;
+        font-size: 8px;
+    }
+
+    .zoneA {
+        width: auto;
+        height: 250px;
+        font-size: 15px;
+    }
+
+    .movieposter {
+        height: 200px;
+    }
+
+    .toyposter {
+        height: 130px;
+    }
+
+    .bookcontainer2 {
+        height: 230px;
+    }
+}

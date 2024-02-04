@@ -1,0 +1,375 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="assets/css/StyleSheet.css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/MasterPage.css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" />
+    <style>
+        #togglePassword {
+            float: right;
+            cursor: pointer;
+        }
+        #togglePassword2 {
+            float: right;
+            cursor: pointer;
+        }
+        #togglePassword3 {
+            float: right;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <div class="maincontainer">
+                <div class="topnav">
+                    <div class="topnavdd">
+                        <button><i style="color: black;" class="material-icons">person</i></button>
+                        <div class="topnavdd-content">
+                            <%--document.getElementbyID is a type of DOM Manipulation. You can read up on what DOM Manipulation is, 
+                                but for now we will leave the code here.--%>
+                            <button type="button"
+                                onclick="document.getElementById('id01').style.display='block'"
+                                style="font-family: 'Oswald', sans-serif; color: #1F618D; float: left; width: 100%; height: 100%; text-align: left; padding: 15px; cursor: pointer;">
+                                Sign In</button>
+                            <br />
+                            <br />
+                            <a href="#" style="font-family: 'Oswald', sans-serif;">Wish List&nbsp&nbsp❤</a>
+                            <a href="#" style="font-family: 'Oswald', sans-serif;">Order Status</a>
+                            <a href="#" style="font-family: 'Oswald', sans-serif;">Payment Methods</a>
+                        </div>
+                    </div>
+                    <a href="#">Help</a>
+                    <a href="#">Membership</a>
+                </div>
+
+                <div id="id01" class="modal">
+                    <form class="modal-content" action="#">
+                        <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close">&times;</span>
+                        <div class="modalcontainer">
+                            <p style="font-family: 'Playfair Display', serif; font-size: 20px;">Sign In</p>
+                            <asp:TextBox ID="txt_Email" CssClass="inputtxt" PlaceHolder="Email Address" runat="server" TextMode="Email"></asp:TextBox>
+                            <asp:TextBox ID="txt_Password" CssClass="inputtxt" PlaceHolder="Password" runat="server" TextMode="Password" style="width: 90%;"></asp:TextBox>
+                            <i id="togglePassword" style="margin-top:15.5px; margin-right: 5px;" class="fa fa-eye"></i>
+
+                            <div class="input-group-append" >  
+                                <asp:CheckBox ID="CheckBox1" runat="server" Text="Remember Me" Checked="true" style="float: left;"/>                                
+                            </div> <br /><br />
+
+                            
+                            <span class="psw"><a onclick="document.getElementById('id01').style.display='none';document.getElementById('id04').style.display='block';" style="text-decoration:underline; cursor: pointer;">Forgot your password?</a></span>
+                            <br />
+                            <asp:Button ID="btnSignIn" class="btnsignin" runat="server" Text="Secure Sign In" OnClick="btnSignIn_Click" Style="cursor: pointer;"/>
+                        </div>
+
+                        <div class="modalcontainer2">
+                            <a class="signinFB" style="cursor: pointer;">
+                                <img src="images/fbbutton.png" height="20px" width="20px;" style="padding-top: 5px;" />
+                                Sign in with Facebook</a>
+                            <a class="signinGoogle" style="cursor: pointer;">
+                                <img src="images/googlebtn.png" height="20px" width="20px;" style="padding-top: 10px;" />
+                                Sign in with Google</a>
+                            <p style="text-align: center; font-size: 10px; padding-top: 50px;">By signing in you agree to our Terms of Use and Privacy Policy</p>
+                        </div>
+
+                        <div class="register">
+                            Don't have an account? 
+                            <a onclick="document.getElementById('id01').style.display='none';document.getElementById('id02').style.display='block';" Style="cursor: pointer;">Create an Account
+                            </a>
+                            <br />
+                            <a style="color: #EC7063; font-size: 12px; cursor: pointer;"
+                                onclick="document.getElementById('id01').style.display='none';document.getElementById('id03').style.display='block';">Sign in as Admin</a>
+                        </div>
+                    </form>
+                </div>
+
+                <div id="id02" class="modal">
+                    <div class="modal-content">
+                        <asp:ToolkitScriptManager ID="toolkitScriptManager1" runat="server"></asp:ToolkitScriptManager> 
+                        <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close">&times;</span>
+                        <div class="modalcontainer">
+                            <p style="font-family: 'Playfair Display', serif; font-size: 20px; text-align: center;">Create an Account</p>
+                            <asp:TextBox ID="txt_FirstName" CssClass="inputtxt" PlaceHolder="First Name" runat="server"></asp:TextBox>
+                            <asp:TextBox ID="txt_LastName" CssClass="inputtxt" PlaceHolder="Last Name" runat="server"></asp:TextBox>
+                            <asp:TextBox ID="txt_phone" CssClass="inputtxt" PlaceHolder="Phone Number" TextMode="Phone" runat="server"></asp:TextBox>
+                            <%--<asp:Button ID="btn_code" PlaceHolder="Verification Code" runat="server" Text="Get Code" /><br />
+                            <asp:TextBox ID="txt_vercode" runat="server"></asp:TextBox>--%>
+                            <asp:TextBox ID="txt_RegEmail" CssClass="inputtxt" PlaceHolder="Email Address" runat="server" TextMode="Email"></asp:TextBox>
+                            <asp:TextBox ID="txt_RegPassword" CssClass="inputtxt" PlaceHolder="Password" runat="server" TextMode="Password" ></asp:TextBox>
+                            <asp:Label ID="lblhelp" style="color:red; font-size: 12px;" runat="server"/>
+
+                            <asp:TextBox ID="txt_ConfirmPW" CssClass="inputtxt" PlaceHolder="Confirm Password" runat="server" style="width: 90%;" TextMode="Password"></asp:TextBox>
+                            <span><i style="margin-top:15.5px; margin-right: 5px;" id="togglePassword2" class="fa fa-eye"></i> <br />  
+                            
+                            <asp:CompareValidator
+                                ID="CompareValidatorPW"
+                                runat="server"
+                                ErrorMessage="Passwords do not match."
+                                ControlToValidate="txt_ConfirmPW"
+                                ControlToCompare="txt_RegPassword"
+                                Operator="Equal" Type="String"
+                                ForeColor="Red"
+                                Style="font-size: 12px;"
+                                Display="Dynamic">
+                            </asp:CompareValidator></span> <br />
+
+                            <asp:PasswordStrength 
+                                ID="pwdStrength" 
+                                TargetControlID="txt_RegPassword" 
+                                HelpStatusLabelID="lblhelp" 
+                                PreferredPasswordLength="8"
+                                MinimumNumericCharacters="1" 
+                                MinimumSymbolCharacters="1" 
+                                StrengthIndicatorType="BarIndicator"
+                                runat="server" />
+
+                            <asp:Button ID="btnRegister" class="btnsignin" runat="server" Text="Create Account" OnClick="btnRegister_Click" style="cursor: pointer;"/>
+                        </div>
+
+                        <div class="register">
+                            Already have an account? 
+                            <a onclick="document.getElementById('id01').style.display='block';document.getElementById('id02').style.display='none';"
+                                style="font-size: small; text-align: center; cursor: pointer;">Sign In
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="id03" class="modal">
+                    <div class="modal-content">
+                        <span onclick="document.getElementById('id03').style.display='none'" class="close" title="Close Modal">&times;</span>
+                        <div class="modalcontainer">
+                            <p style="font-family: 'Playfair Display', serif; font-size: 20px; text-align: center;">Admin Sign In</p>
+                            <asp:TextBox ID="txt_AdminEmail" CssClass="inputtxt" PlaceHolder="Email Address" runat="server"></asp:TextBox>
+                            <asp:TextBox ID="txt_AdminPassword" CssClass="inputtxt" PlaceHolder="Password" runat="server" style="width: 90%;" TextMode="Password"></asp:TextBox>
+                            <i id="togglePassword3" style="margin-top:15.5px; margin-right: 5px;" class="fa fa-eye"></i> <br /><br />
+
+                            <asp:Button ID="btnAdminSignIn" class="btnsignin" runat="server" Text="Secure Sign In" OnClick="btnAdminSignIn_Click" Style="cursor: pointer;"/>
+                            <div class="register">
+                                <a onclick="document.getElementById('id01').style.display='block';document.getElementById('id03').style.display='none';" style="font-size: small; cursor: pointer;">Sign in as User</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="id04" class="modal">
+                    <div class="modal-content">
+                        <span onclick="document.getElementById('id04').style.display='none';document.getElementById('id01').style.display='block';" class="close" title="Close Modal">&times;</span>
+                        <div class="modalcontainer">
+                            <p style="font-family: 'Playfair Display', serif; font-size: 20px; text-align: center; font-weight:bold;">Forgot Your Password ?</p>
+                            <p style="font-family: Helvetica Neue;">Please enter your email address below, and we'll send you a link to reset your password.</p>
+                            <asp:TextBox ID="tbEmail" CssClass="inputtxt" PlaceHolder="Email Address" runat="server" TextMode="Email"></asp:TextBox>
+<%--                            <asp:RequiredFieldValidator ID="email" runat="server" ControlToValidate="tbEmail" ErrorMessage="Please enter a your email" ForeColor="Red" style="font-size: 12px;"></asp:RequiredFieldValidator>--%>
+                            <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="tbEmail"
+                            ForeColor="Red" ValidationExpression="^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$"
+                            Display = "Dynamic" style="font-size: 12px;" ErrorMessage = "Invalid email address."/><br />
+                            <asp:Label ID="lbl_msg" runat="server" ForeColor="Red" style="font-size: 12px;"></asp:Label>
+                            <asp:Button ID="btnVerCode" class="btnsignin" runat="server" Text="Continue" Style="cursor: pointer;" OnClick="btnSendEmail_Click"/>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="midnav">
+                    <div class="midnavleft">
+                        <a href="indexBags.aspx">Shopbagz</a>
+                    </div>
+
+                    <div class="srchbarcontainer">
+                        <asp:TextBox ID="txtSearch" PlaceHolder="Search for an item" class="searchbar" runat="server"></asp:TextBox>
+                        <asp:Button ID="btnSearch"
+                            runat="server"
+                            Style="padding: 0; margin: 0; border: none; color: black; background-color: #b3b3ff; cursor: pointer;"
+                            Text="GO"
+                            Height="30"
+                            Width="40"
+                            OnClick="btnSearch_Click" />
+                    </div>
+
+                    <div class="midnavright">
+                        <a href="#"><i style="color: black;" class="material-icons">location_on</i></a>
+                        <a href="ViewCart.aspx"><i style="color: #b3b3ff" class="material-icons">shopping_cart</i></a>
+                    </div>
+                </div>
+
+                <div class="btmnav">
+                    <div class="dropdownbooks">
+                        <button>Bags</button>
+                        <div class="dropdownbooks-content">
+                            <a style="font-family: 'Oswald', sans-serif;">CATEGORIES</a>
+                            <a style="font-family: 'Oswald', sans-serif;">FEATURED</a>
+                            <a style="font-family: 'Oswald', sans-serif;">TRENDS & OCCASIONS</a>
+                            <p style="font-size: 10px;" href="#"></p>
+
+                            <%--This link below will be the page we will code with all the products.--%>
+                            <a style="font-size: 10px;" href="all-products-page.aspx">View All Bags</a>
+                            <a style="font-size: 10px;" href="BestSellerBags.aspx">The Bestsellers</a>
+                            <a style="font-size: 10px;" href="#">Essentials</a>
+                            <p style="font-size: 10px;" href="#"></p>
+
+                            <a style="font-size: 10px;" href="#">New Arrivals</a>
+                            <a style="font-size: 10px;" href="#">Trending Now</a>
+                            <a style="font-size: 10px;" href="#">Party</a>
+                            <p style="font-size: 10px;" href="#"></p>
+
+                            <a style="font-size: 10px;" href="#">Backpacks</a>
+                            <a style="font-size: 10px;" href="#">Online Exclusive</a>
+                            <a style="font-size: 10px;" href="#">Wedding</a>
+                            <p style="font-size: 10px;" href="#"></p>
+
+                            <a style="font-size: 10px;" href="#">Crossbody Bags</a>
+<%--                        <a style="font-family: 'Oswald', sans-serif;">BLOGS</a>--%>
+                            <a style="font-size: 10px;" href="#">Back In Stock</a>
+                            <a style="font-size: 10px;" href="#">Work</a>
+<%--                        <a style="font-family: 'Oswald', sans-serif;">SPECIAL VALUES</a>--%>
+                            <p style="font-size: 10px;" href="#"></p>
+
+                            <a style="font-size: 10px;" href="#">Handbags</a>
+                            <a style="font-size: 10px;" href="#">Summer 2023 Bags</a>
+                            <p style="font-size: 10px;" href="#"></p>
+<%--                        <a style="font-size: 10px; color: gray" href="#">See More ></a>--%>
+                            <p style="font-size: 10px;" href="#"></p>
+
+                            <a style="font-size: 10px;" href="#">Shoulder Bags</a>
+                            <a style="font-size: 10px;" href="#">The Bucks Collection</a>
+                            <p style="font-size: 10px;" href="#"></p>
+                            <p style="font-size: 10px;" href="#"></p>
+
+                            <a style="font-size: 10px;" href="#">Tote Bags</a>
+                            <p style="font-size: 10px;" href="#"></p>
+                            <p style="font-size: 10px;" href="#"></p>
+                            <p style="font-size: 10px;" href="#"></p>
+
+<%--                        <a style="font-size: 10px; color: red" href="#">Sale</a>--%>
+                            <p style="font-size: 10px;" href="#"></p>
+                            <p style="font-size: 10px;" href="#"></p>
+                            <p style="font-size: 10px;" href="#"></p>
+                            <p style="font-size: 10px;" href="#"></p>
+
+                            <p style="font-size: 10px;" href="#"></p>
+                            <p style="font-size: 10px;" href="#"></p>
+                            <p style="font-size: 10px;" href="#"></p>
+                            <p style="font-size: 10px;" href="#"></p>
+                        </div>
+                    </div>
+                    <a href="#">Wallets</a>
+                    <a href="#">Fragrances</a>
+                    <a href="#">Jewellery</a>
+                    <a href="#">Kids</a>
+                    <a style="color: red" href="#">Sale</a>
+                </div>
+
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
+            </div>
+
+            <div class="maincontainer">
+                <div class="footer">
+                    <div class="leftfooter">
+                        <div class="bookmarks">
+                            <p>SB Services</p>
+                            <p>Shipping</p>
+                            <p>About Us</p>
+                            <p>Quick Help</p>
+                        </div>
+                        <div class="directions">
+                            <ul>
+                                <li><a href="#">Advertise</a></li>
+                                <li><a href="#">Affiliate Program</a></li>
+                                <li><a href="#">Publisher & Author Guidelines</a></li>
+                                <li><a href="#">Bulk Order Discounts</a></li>
+                                <li><a href="#">Membership</a></li>
+                            </ul>
+                            <ul>
+                                <li><a href="#">Shipping FAQs</a></li>
+                            </ul>
+                            <ul>
+                                <li><a href="#">About ShopBagz</a></li>
+                                <li><a href="#">Investor Relations</a></li>
+                                <li><a href="#">ShopBagz 2.0 Inc.</a></li>
+                                <li><a href="#">Careers at ShopBagz</a></li>
+                            </ul>
+                            <ul>
+                                <li><a href="#">Customer Service</a></li>
+                                <li><a href="#">Order Status</a></li>
+                                <li><a href="#">Easy Returns</a></li>
+                                <li><a href="#">Product Recalls</a></li>
+                                <li><a href="#">Correction & Updates</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="rightfooter">
+                        <asp:Button ID="btnFindLocation" Style="width: 100%; height: 40px; border: 0.5px solid; background-color: transparent; font-size: 16px; font-family: 'Poppins', sans-serif;" runat="server" Text="Locate Nearest Store" />
+                        <br />
+                        <br />
+                        <asp:Button ID="btnNewsUpdate" Style="width: 100%; height: 40px; border: 0.5px solid; background-color: transparent; font-size: 12px; font-family: 'Poppins', sans-serif;" runat="server" Text="Sign up for news updates" />
+
+                        <div class="socialmedias">
+                            <asp:ImageButton ID="ImageButton1" Height="30px" Width="30px" ImageUrl="images/fb.png" runat="server" OnClientClick="document.location.href = 'https://www.facebook.com/charleskeithofficial/'; return false"/>
+                            <asp:ImageButton ID="ImageButton2" Height="30px" Width="30px" ImageUrl="images/twitter.png" runat="server" OnClientClick="document.location.href = 'https://twitter.com/Charles_Keith?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor'; return false"/>
+                            <asp:ImageButton ID="ImageButton3" Height="30px" Width="30px" ImageUrl="images/ig.png" runat="server" OnClientClick="document.location.href = 'https://www.instagram.com/charleskeithofficial/?hl=en'; return false"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+            <script type="text/javascript">
+                var togglePassword = document.querySelector('#togglePassword');
+                var password = document.querySelector('#txt_Password');
+                togglePassword.addEventListener('click', function (e) {
+                    const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+                    password.setAttribute('type', type);
+                    this.classList.toggle('fa-eye-slash');
+                });
+                var togglePassword2 = document.querySelector('#togglePassword2');
+                var password2 = document.querySelector('#txt_RegPassword');
+                var password3 = document.querySelector('#txt_ConfirmPW');
+                togglePassword2.addEventListener('click', function (e) {
+                    const type = password2.getAttribute('type') === 'password' ? 'text' : 'password';
+                    password2.setAttribute('type', type);
+                });
+                togglePassword2.addEventListener('click', function (e) {
+                    const type = password3.getAttribute('type') === 'password' ? 'text' : 'password';
+                    password3.setAttribute('type', type);
+                    this.classList.toggle('fa-eye-slash');
+                });
+
+                var togglePassword3 = document.querySelector('#togglePassword3');
+                var password4 = document.querySelector('#txt_AdminPassword');
+                togglePassword3.addEventListener('click', function (e) {
+                    const type = password4.getAttribute('type') === 'password' ? 'text' : 'password';
+                    password4.setAttribute('type', type);
+                    this.classList.toggle('fa-eye-slash');
+                });
+
+                // Get the modal
+                var modal = document.getElementById('id01');
+                var modal2 = document.getElementById('id02');
+                var modal3 = document.getElementById('id03');
+                var modal4 = document.getElementById('id04');
+
+                // When the user clicks anywhere outside of the modal, close it
+                window.onclick = function (event) {
+                    if (event.target == modal) {
+                        modal.style.display = "none";
+                        modal2.style.display = "none";
+                        modal3.style.display = "none";
+                        modal4.style.display = "none";
+                    }
+                }
+            </script>
+
+        </div>
+    </form>
+</body>
+</html>
